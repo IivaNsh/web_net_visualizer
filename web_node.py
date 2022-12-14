@@ -7,7 +7,7 @@ def get_links(bs_page):
     links = set()
     for link in bs_page.findAll('a'):
         link_text= link.get('href')
-        if("https" in link_text):
+        if link_text and ("https" in link_text):
             links.add(link_text)
     return links
 
