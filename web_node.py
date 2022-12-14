@@ -8,9 +8,7 @@ def get_links(bs_page):
     for link in bs_page.findAll('a'):
         link_text= link.get('href')
         if("https" in link_text):
-            #f.write(link_text+"\n")
             links.add(link_text)
-    print("$$$", len(list(links)))
     return links
 
 class web_tree:
@@ -50,12 +48,11 @@ class web_node:
                     new_node = web_node(next_url)
                     new_node.generate(self.depth - 1, all_links)
                     self.child_nodes.add(new_node)
-                    
-            #for child_node in self.child_nodes:
 
         all_links.union(self.links)
 
-    
+
+        
     def info(self):
         print("  "*(3-self.depth)+"\__"+f" | links - {len(list(self.links))} | url -> {self.url}")
         
