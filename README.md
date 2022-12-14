@@ -1,6 +1,6 @@
 WEB NET VISUALIZER
 
-not done.
+Can parse web pages for links and create node tree from them.
 
 dependencies:
     os
